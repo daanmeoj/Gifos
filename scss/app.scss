@@ -1,0 +1,868 @@
+@import "variables";
+
+body {
+  background-color: $decimo-septimo;
+}
+
+////////////////////////////navegacion/////////////////////////
+
+.navegacion {
+  height: 23px;
+  h1 {
+    font-family: $fuente-principal;
+    font-weight: 400;
+    font-size: 12px;
+    color: $septimo;
+    letter-spacing: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin: 0;
+    margin-left: 0.6%;
+  }
+  background-image: linear-gradient(270deg, $primero 0%, $segundo 100%);
+  box-shadow: 0 1px 0 0 $tercero;
+}
+
+////////////////////////////landing///////////////////////////
+
+.landing {
+  position: relative;
+  height: 121px;
+  display: flex;
+  .logo {
+    flex: 193.6;
+    position: relative;
+    top: 39px;
+    left: 8%;
+  }
+  .combos {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: 44px;
+    flex: 1104.9;
+    .combo-item {
+      margin-left: 1.1%;
+    }
+    .boton {
+      .boton-tipo-1 {
+        button {
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+          margin: 0;
+          border: 0;
+          padding: 0;
+          background: $primero;
+          border: 1px solid $tercero;
+          box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+          height: 36px;
+          width: 144px;
+        }
+      }
+    }
+    .dropdown {
+      width: 167px;
+      height: 36px;
+
+      .contenedor-ListaTemas {
+        display: none;
+        height: 102px;
+        position: absolute;
+        top: 36px;
+        z-index: 1000;
+        margin: 0;
+        width: 163px;
+        height: 102px;
+        background: $decimo-octavo;
+        box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+        button {
+          width: 150px;
+          height: 36px;
+          font-family: $fuente-principal;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          line-height: 22px;
+        }
+        .day {
+          position: absolute;
+          left: 6px;
+          top: 10px;
+          background: $decimo-septimo;
+          border: 1px solid $vigesiomo-segundo;
+          box-shadow: inset -1px -1px 0 0 $noveno, inset 1px 1px 0 0 $septimo;
+          span {
+            text-decoration: underline;
+          }
+        }
+        .night {
+          position: absolute;
+          left: 6px;
+          bottom: 10px;
+          background: $vigesimo-tercero;
+          border: 1px solid $quinto;
+          box-shadow: inset -1px -1px 0 0 $sexto, inset 1px 1px 0 0 $septimo;
+        }
+      }
+
+      .boton {
+        a {
+          text-decoration: none;
+        }
+        .boton-tipo-4 {
+          display: flex;
+          button {
+            font-family: $fuente-principal;
+            font-weight: 400;
+            font-size: 16px;
+            color: $tercero;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 18px;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            background: $primero;
+            border: 1px solid $tercero;
+            box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+
+            &:first-child {
+              flex: 131;
+              height: 36px;
+            }
+            &:last-child {
+              flex: 36;
+              height: 36px;
+            }
+          }
+        }
+      }
+    }
+
+    .enlace {
+      border: 0;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      a {
+        text-decoration: none;
+        font-family: $fuente-principal;
+        font-size: 16px;
+        color: $tercero;
+        letter-spacing: 0;
+        line-height: 18px;
+        font-weight: 400;
+        span {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .empty {
+    flex: 140.5;
+  }
+}
+
+//////////////////////////////modal window////////////////
+
+.modalActive {
+  height: 535px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 3px;
+  .contenedorModal {
+    height: 386px;
+    width: 684px;
+    position: absolute;
+    top: 56px;
+    background: $decimo-octavo;
+    box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+    .headCrear {
+      background-image: linear-gradient(270deg, $primero 0%, $segundo 100%);
+      height: 24px;
+      position: relative;
+      h3 {
+        border: 0;
+        margin: 0;
+        font-family: $fuente-principal;
+        font-weight: 500;
+        font-size: 14px;
+        color: $septimo;
+        letter-spacing: 0;
+        position: absolute;
+        left: 7px;
+        top: 3.4px;
+      }
+    }
+    .bodyCrear {
+      .seccionTitulo {
+        height: 69px;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        h3 {
+          margin: 0;
+          font-family: $fuente-principal;
+          font-weight: 700;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          line-height: 22px;
+          position: absolute;
+          top: 30px;
+          left: 73px;
+        }
+        div {
+          position: absolute;
+          top: 30px;
+          left: 25px;
+        }
+      }
+      .seccionBody {
+        height: 190px;
+        p {
+          margin: 0;
+          margin-left: 73px;
+          margin-right: 93px;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 14px;
+          color: $tercero;
+          letter-spacing: 0;
+          line-height: 20px;
+          span {
+            font-weight: 700;
+          }
+        }
+        ul {
+          list-style: none;
+          margin: 0;
+          margin-top: 10px;
+          padding: 0;
+          li {
+            margin: 0;
+            margin-left: 73px;
+            margin-bottom: 10px;
+            font-family: $fuente-principal;
+            font-weight: 400;
+            font-size: 14px;
+            color: $tercero;
+            letter-spacing: 0;
+            line-height: 20px;
+            span {
+              font-weight: 700;
+            }
+          }
+        }
+      }
+      .seccionBotones {
+        height: 100px;
+        position: relative;
+        button {
+          height: 36px;
+          width: 144px;
+          h3 {
+            margin: 0;
+            font-family: $fuente-principal;
+            font-weight: 400;
+            font-size: 16px;
+            color: $tercero;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 18px;
+          }
+        }
+        .boton-1-modal {
+          background: $decimo-septimo;
+          border: 1px solid $tercero;
+          box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+          position: absolute;
+          left: 344px;
+          top: 28px;
+        }
+        .boton-2-modal {
+          background: $primero;
+          border: 1px solid $tercero;
+          box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+          position: absolute;
+          right: 36px;
+          bottom: 36px;
+        }
+      }
+    }
+  }
+}
+///////////////////////////////chequeo////////////////////
+
+.chequeoActive {
+  height: 882px;
+  display: flex;
+  justify-content: center;
+  .contenidoChequeo {
+    background: $decimo-octavo;
+    box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+    height: 548px;
+    width: 860px;
+    .headingChequeo {
+      height: 24px;
+      background-image: linear-gradient(270deg, $primero 0%, $segundo 100%);
+      position: relative;
+      h3 {
+        margin: 0;
+        font-family: $fuente-principal;
+        font-weight: 600;
+        font-size: 14px;
+        color: $septimo;
+        letter-spacing: 0;
+        position: absolute;
+        left: 3px;
+        top: 6.4px;
+      }
+    }
+    .bodyChequeo {
+      height: 524px;
+      width: 860px;
+      display: flex;
+      justify-content: center;
+      position: relative;
+
+      .imagenChequeo,
+      .imagenPrevia,
+      .imagenSubiendo {
+        position: absolute;
+        top: 8px;
+        background: $decimo-octavo;
+        box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+        height: 440px;
+        width: 832px;
+      }
+      .imagenSubiendo {
+        h3 {
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 12px;
+          color: rgba(17, 0, 56, 0.64);
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 14px;
+          span {
+            text-decoration: line-through;
+          }
+        }
+        .textProgressBar {
+          position: absolute;
+          top: 288px;
+          left: 302.5px;
+        }
+        background: #ffffff;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+        position: relative;
+        .PlanetaSubiendo {
+          position: relative;
+          img {
+            position: absolute;
+            top: 139px;
+            left: 398px;
+          }
+          h3 {
+            font-family: $fuente-principal;
+            font-weight: 700;
+            font-size: 16px;
+            color: #110038;
+            letter-spacing: 0;
+            text-align: center;
+            line-height: 22px;
+            position: absolute;
+            top: 195px;
+            left: 314.5px;
+          }
+        }
+        .ProgressBar {
+          width: 324px;
+          height: 24px;
+          background: #b4b4b4;
+          box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000000;
+          position: absolute;
+          left: 257px;
+          top: 256px;
+          .BarContainer {
+            display: flex;
+            justify-content: flex-start;
+            position: absolute;
+            top: 2px;
+            left: 2px;
+          }
+          .ProgressElement {
+            width: 12px;
+            height: 20px;
+            background: #999999;
+            margin-right: 2px;
+          }
+        }
+      }
+      .repetirCaptura {
+        position: absolute;
+        right: 174px;
+        bottom: 16px;
+        z-index: 1000;
+        background: $decimo-septimo;
+        border: 1px solid $tercero;
+        box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+        height: 36px;
+        width: 144px;
+        display: none;
+        h3 {
+          margin: 0;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+          position: absolute;
+          top: 9px;
+          left: 13.5px;
+        }
+      }
+
+      .timer {
+        position: absolute;
+        z-index: 1000;
+        height: 36px;
+        width: 124px;
+        background: #ffffff;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+        left: 11px;
+        bottom: 16px;
+
+        .contenedorTimer {
+          display: flex;
+          position: absolute;
+          bottom: 7px;
+          left: 21px;
+        }
+        h3 {
+          margin: 0;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: #110038;
+          letter-spacing: 0;
+          line-height: 22px;
+          position: relative;
+        }
+      }
+
+      .botonCancelar {
+        background: #fff4fd;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        width: 144px;
+        height: 36px;
+        position: absolute;
+        left: 702px;
+        top: 464px;
+        display: none;
+        h3 {
+          font-family: $fuente-principal;
+          position: absolute;
+          font-weight: 400;
+          font-size: 16px;
+          color: #110038;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+          margin: 0;
+          padding: 0;
+          border: 0;
+          top: 0;
+          left: 39.5px;
+          top: 9px;
+        }
+      }
+
+      .subir {
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+        z-index: 1000;
+        background: $primero;
+        border: 1px solid $tercero;
+        box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+        height: 36px;
+        width: 144px;
+        display: none;
+        h3 {
+          margin: 0;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+          position: absolute;
+          top: 9px;
+          left: 31.5px;
+        }
+      }
+      .botonCapturar {
+        height: 36px;
+        width: 180px;
+        position: absolute;
+        background: $primero;
+        border: 1px solid $tercero;
+        box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
+        right: 16px;
+        bottom: 16px;
+        display: flex;
+        .divCamera {
+          width: 36px;
+          height: 34px;
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-right: 1px solid $tercero;
+        }
+        .divTexto {
+          width: 144px;
+          height: 34px;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+        h3 {
+          margin: 0;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+          position: absolute;
+          left: 37.5px;
+          top: 9px;
+        }
+      }
+    }
+  }
+
+  .Minimizar {
+    width: 721px;
+    height: 391px;
+    .bodyChequeo {
+      width: 721px;
+      height: 367px;
+
+      .imagenPrevia {
+        height: 191px;
+        width: 365px;
+        top: 29px;
+        left: 27px;
+      }
+    }
+  }
+}
+
+//////////////////////////////busqueda////////////////////
+
+.busqueda {
+  max-width: 1438px;
+  height: 99px;
+  display: flex;
+  justify-content: center;
+
+  .contenedor-busqueda {
+    height: 99px;
+    width: 83.3%;
+    background: $decimo-octavo;
+    box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+    display: flex;
+    flex-direction: column;
+    .titulo {
+      flex: 24;
+      background-image: linear-gradient(270deg, $primero 0%, $segundo 100%);
+      h3 {
+        font-family: $fuente-principal;
+        font-size: 14px;
+        font-weight: 700;
+        color: $septimo;
+        letter-spacing: 0;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        left: 6px;
+        top: 6px;
+      }
+    }
+    .zona-busqueda {
+      flex: 75;
+      background: $decimo-octavo;
+      box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+      form {
+        position: relative;
+        top: 13px;
+        display: flex;
+        .empty-1 {
+          flex: 15;
+        }
+        input[type="text"] {
+          height: 48px;
+          flex: 1057;
+          background: $septimo;
+          border: 1px solid $vigesimo;
+          box-shadow: inset -2px -2px 0 0 $decimo-octavo,
+            inset 2px 2px 0 0 $decimo-noveno;
+          padding-left: 16px;
+          &::placeholder {
+            font-family: $fuente-principal;
+            font-weight: 400;
+            font-size: 16px;
+            color: $sexto;
+            letter-spacing: 0;
+            line-height: 22px;
+          }
+        }
+        .empty-2 {
+          flex: 8;
+        }
+        .boton-submit {
+          a {
+            text-decoration: none;
+          }
+          flex: 102;
+          height: 36px;
+          position: relative;
+          top: 6px;
+          button {
+            display: flex;
+            justify-content: space-around;
+            height: 100%;
+            width: 100%;
+            background: $decimo-octavo;
+            border: 1px solid $quinto;
+            box-shadow: inset -1px -1px 0 0 $sexto, inset 1px 1px 0 0 $septimo;
+            .lupa {
+              width: 16px;
+              height: 16px;
+            }
+            h3 {
+              font-family: $fuente-principal;
+              font-size: 16px;
+              font-weight: 400;
+              color: $sexto;
+              letter-spacing: 0;
+              line-height: 18px;
+              margin: 0;
+              padding: 0;
+            }
+          }
+        }
+
+        .empty-3 {
+          flex: 18;
+        }
+      }
+    }
+  }
+}
+
+////////////////////////////////sugerencias
+.sugerencias {
+  height: 428px;
+  max-width: 83.3%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+
+  .card {
+    background: $decimo-octavo;
+    box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
+    padding: 4px;
+    height: 313px;
+    width: 263px;
+    img {
+      width: 263px;
+      height: 286px;
+      padding-top: 2px;
+    }
+  }
+  .empty-1 {
+    flex: 14.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    //padding: 16px 17px;
+    position: relative;
+    .botonQueAparece {
+      button {
+        width: 100%;
+        height: 34px;
+        background: $vigesimo-tercero;
+        border: 1px solid $quinto;
+        box-shadow: inset -1px -1px 0 0 $sexto, inset 1px 1px 0 0 $septimo;
+        h3 {
+          margin: 0;
+          text-align: left;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: $tercero;
+          letter-spacing: 0;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+  .heading {
+    flex: 7.4;
+    //height: 32px;
+    margin: 0;
+    padding: 0;
+    background: $decimo-segundo;
+    border: 1px solid $octavo;
+    box-shadow: inset -2px -2px 0 0 $noveno, inset 2px 2px 0 0 $vigesimo-primero;
+    h3 {
+      margin: 0;
+      font-family: $fuente-principal;
+      font-size: 14px;
+      color: $tercero;
+      letter-spacing: 0;
+      font-weight: 400;
+      position: relative;
+      top: 7px;
+      left: 7px;
+    }
+  }
+
+  .empty-2 {
+    flex: 5.14;
+  }
+  .resultados-sugeridos {
+    flex: 73.13;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .card-heading {
+      height: 24px;
+      background-image: linear-gradient(270deg, $primero 0%, $segundo 100%);
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+
+      h3 {
+        margin: 0;
+        margin-top: 10px;
+        padding: 0;
+        font-family: $fuente-principal;
+        font-weight: 600;
+        font-size: 14px;
+        color: $septimo;
+        position: relative;
+        top: -5px;
+        right: -6px;
+      }
+      img {
+        width: 16px;
+        height: 14px;
+        position: relative;
+        top: 4px;
+        right: 4px;
+      }
+    }
+    .gif {
+      position: relative;
+      .boton {
+        position: absolute;
+        top: 237px;
+        left: 14px;
+        button {
+          margin: 0;
+          padding: 8px 10px;
+          background: $segundo;
+          border: 1px solid $decimo;
+          box-shadow: inset -2px -2px 0 0 $decimo-primero,
+            inset 2px 2px 0 0 $septimo;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 14px;
+          color: $septimo;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+///////////////////////tendencias///////////////////////
+
+.tendencias {
+  height: 1905px;
+  max-width: 83.3%;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  .card {
+    img {
+      width: 263px;
+      height: 280px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      margin-bottom: 16px;
+    }
+  }
+  .particularCard {
+    img {
+      width: 555px;
+    }
+  }
+
+  .empty-1 {
+    flex: 64;
+  }
+  .heading {
+    flex: 32;
+    background: $decimo-segundo;
+    border: 1px solid $octavo;
+    box-shadow: inset -2px -2px 0 0 $noveno, inset 2px 2px 0 0 $vigesimo-primero;
+    height: 32px;
+    h3 {
+      margin: 0;
+      font-family: $fuente-principal;
+      font-size: 14px;
+      color: $tercero;
+      letter-spacing: 0;
+      font-weight: 400;
+      position: relative;
+      top: 7px;
+      left: 7px;
+    }
+  }
+  .empty-2 {
+    flex: 17;
+  }
+
+  .resultados-tendencias {
+    flex: 1570;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+  }
+}
