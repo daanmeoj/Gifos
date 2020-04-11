@@ -359,9 +359,10 @@ body {
           top: 288px;
           left: 302.5px;
         }
-        background: #ffffff;
-        border: 1px solid #979797;
-        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+        background: $septimo;
+        border: 1px solid $vigesimo;
+        box-shadow: inset -2px -2px 0 0 $decimo-octavo,
+          inset 2px 2px 0 0 $decimo-noveno;
         position: relative;
         .PlanetaSubiendo {
           position: relative;
@@ -374,7 +375,7 @@ body {
             font-family: $fuente-principal;
             font-weight: 700;
             font-size: 16px;
-            color: #110038;
+            color: $tercero;
             letter-spacing: 0;
             text-align: center;
             line-height: 22px;
@@ -386,8 +387,9 @@ body {
         .ProgressBar {
           width: 324px;
           height: 24px;
-          background: #b4b4b4;
-          box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000000;
+          background: $sexto;
+          box-shadow: inset -2px -2px 0 0 $vigesimo-cuarto,
+            inset 2px 2px 0 0 $decimo-noveno;
           position: absolute;
           left: 257px;
           top: 256px;
@@ -401,7 +403,7 @@ body {
           .ProgressElement {
             width: 12px;
             height: 20px;
-            background: #999999;
+            background: $vigesimo-quinto;
             margin-right: 2px;
           }
         }
@@ -437,9 +439,10 @@ body {
         z-index: 1000;
         height: 36px;
         width: 124px;
-        background: #ffffff;
-        border: 1px solid #979797;
-        box-shadow: inset -2px -2px 0 0 #e6e6e6, inset 2px 2px 0 0 #000000;
+        background: $septimo;
+        border: 1px solid $vigesimo;
+        box-shadow: inset -2px -2px 0 0 $decimo-octavo,
+          inset 2px 2px 0 0 $decimo-noveno;
         left: 11px;
         bottom: 16px;
 
@@ -454,7 +457,7 @@ body {
           font-family: $fuente-principal;
           font-weight: 400;
           font-size: 16px;
-          color: #110038;
+          color: $tercero;
           letter-spacing: 0;
           line-height: 22px;
           position: relative;
@@ -462,9 +465,9 @@ body {
       }
 
       .botonCancelar {
-        background: #fff4fd;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        background: $decimo-septimo;
+        border: 1px solid $tercero;
+        box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
         width: 144px;
         height: 36px;
         position: absolute;
@@ -476,7 +479,7 @@ body {
           position: absolute;
           font-weight: 400;
           font-size: 16px;
-          color: #110038;
+          color: $tercero;
           letter-spacing: 0;
           text-align: center;
           line-height: 18px;
@@ -486,6 +489,61 @@ body {
           top: 0;
           left: 39.5px;
           top: 9px;
+        }
+      }
+
+      .CopiarlEnlace,
+      .DescargarGuifo {
+        background: #fff4fd;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        width: 256px;
+        height: 36px;
+        position: absolute;
+        right: 46px;
+        top: 87px;
+      }
+
+      .DescargarGuifo {
+        top: 137px;
+      }
+
+      .Listo {
+        background: #f7c9f3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+        width: 144px;
+        height: 36px;
+        position: absolute;
+        bottom: 44px;
+        right: 46px;
+      }
+
+      .textoGuifoSubido {
+        font-family: $fuente-principal;
+        font-weight: 700;
+        font-size: 16px;
+        color: #110038;
+        letter-spacing: 0;
+        line-height: 22px;
+        position: absolute;
+        left: 419px;
+        margin: 0;
+        top: 49px;
+      }
+
+      .CopiarlEnlace,
+      .DescargarGuifo,
+      .Listo {
+        h3 {
+          margin: 0;
+          font-family: $fuente-principal;
+          font-weight: 400;
+          font-size: 16px;
+          color: #110038;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 18px;
         }
       }
 

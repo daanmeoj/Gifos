@@ -12,7 +12,13 @@ var p,
   imagenPlanetaSubiendo,
   textoPlanetaSubiendo,
   textProgressBar,
-  botonCancelar;
+  botonCancelar,
+  botonCopiarEnlace,
+  botonDescargarGuifo,
+  botonListo,
+  botonesChequeo,
+  textoGuifoSubido,
+  urlNewGif;
 
 class Timer {
   ResetCounters() {
@@ -32,7 +38,6 @@ class Timer {
   }
 
   ControlarCronometro() {
-    // Aquí va tu código
     if (counterCentisegundos < 10) {
       centisegundos.firstElementChild.innerHTML = "0" + counterCentisegundos;
     } else if (counterCentisegundos <= 60) {
@@ -178,6 +183,29 @@ class UI {
     contenidoChequeo.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.style.display =
       "block";
     tendenciasSection.style.display = "";
+    botonCancelar.style.display = "none";
+    botonCopiarEnlace = document.createElement("button");
+    botonDescargarGuifo = document.createElement("button");
+    botonListo = document.createElement("button");
+    textoGuifoSubido = document.createElement("h3");
+    textoGuifoSubido.textContent = "Guifo creado con éxito";
+    botonCopiarEnlace.classList.add("CopiarlEnlace");
+    botonDescargarGuifo.classList.add("DescargarGuifo");
+    botonListo.classList.add("Listo");
+    textoGuifoSubido.classList.add("textoGuifoSubido");
+    let textobotonCopiarEnlace = document.createElement("h3");
+    let textobotonDescargarGuifo = document.createElement("h3");
+    let textobotonListo = document.createElement("h3");
+    textobotonCopiarEnlace.textContent = "Copiar Enlace Guifo";
+    textobotonDescargarGuifo.textContent = "Descargar Guifo";
+    textobotonListo.textContent = "Listo";
+    botonCopiarEnlace.appendChild(textobotonCopiarEnlace);
+    botonDescargarGuifo.appendChild(textobotonDescargarGuifo);
+    botonListo.appendChild(textobotonListo);
+    botonesChequeo.appendChild(botonCopiarEnlace);
+    botonesChequeo.appendChild(botonDescargarGuifo);
+    botonesChequeo.appendChild(botonListo);
+    botonesChequeo.appendChild(textoGuifoSubido);
   }
 
   ToggleList(e) {
@@ -207,7 +235,7 @@ class UI {
     headingChequeo = document.createElement("div");
     let bodyChequeo = document.createElement("div");
     imagenChequeo = document.createElement("video");
-    let botonesChequeo = document.createElement("div");
+    botonesChequeo = document.createElement("div");
     botonCapturar = document.createElement("button");
     botonRepetirCaptura = document.createElement("button");
     botonSubir = document.createElement("button");
@@ -304,29 +332,24 @@ class UI {
 
   ComenzarCaptura() {
     if (!botonCapturar.classList.contains("RecordingNow")) {
-      //cronometro = new Timer();
       recorder.startRecording();
-      //cronometro.startCronometro();
       centisegundos = document.querySelector(".centisegundos");
       segundos = document.querySelector(".segundos");
       minutos = document.querySelector(".minutos");
       horas = document.querySelector(".horas");
       timer.startCronometro();
 
-      //let botoCapt = document.querySelector(".botonCapturar");
       botonCapturar.firstElementChild.firstElementChild.src = recording;
       botonCapturar.lastElementChild.firstElementChild.textContent = "Listo";
       botonCapturar.lastElementChild.firstElementChild.style.left = "54.5px";
-      botonCapturar.firstElementChild.style.background = "#FF6161";
-      botonCapturar.firstElementChild.style.border = "1px solid #110038";
-      botonCapturar.firstElementChild.style.boxShadow =
-        "inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF";
+      botonCapturar.firstElementChild.style.background = VigesimoSexto;
+      botonCapturar.firstElementChild.style.border = `1px solid ${tercero}`;
+      botonCapturar.firstElementChild.style.boxShadow = `inset -1px -1px 0 0 ${vigesimoSeptimo}, inset 1px 1px 0 0 ${septimo}`;
       botonCapturar.lastElementChild.firstElementChild.src = recording;
-      botonCapturar.lastElementChild.style.background = "#FF6161";
-      botonCapturar.lastElementChild.style.border = "1px solid #110038";
-      botonCapturar.lastElementChild.style.boxShadow =
-        "inset -1px -1px 0 0 #993A3A, inset 1px 1px 0 0 #FFFFFF";
-      botonCapturar.lastElementChild.firstElementChild.style.color = "#FFFFFF";
+      botonCapturar.lastElementChild.style.background = VigesimoSexto;
+      botonCapturar.lastElementChild.style.border = `1px solid ${tercero}`;
+      botonCapturar.lastElementChild.style.boxShadow = `inset -1px -1px 0 0 ${vigesimoSeptimo}, inset 1px 1px 0 0 ${septimo}`;
+      botonCapturar.lastElementChild.firstElementChild.style.color = septimo;
       botonCapturar.classList.add("RecordingNow");
       headingChequeo.firstElementChild.textContent = "Capturando Tu Guifo";
     } else {

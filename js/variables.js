@@ -23,7 +23,9 @@ let primero = "#f7c9f3",
   vigesimoSegundo = "#5C5C5C",
   vigesimoTercero = "#A72CB3",
   vigesimoCuarto = "#CCCCCC",
-  vigesimoQuinto = "#E6DCE4";
+  vigesimoQuinto = "#E6DCE4",
+  VigesimoSexto = "#FF6161",
+  vigesimoSeptimo = "#993A3A";
 ///////////////////////////////////////assets//////////////////////////////////////
 let darkLogo = "./assets/gifOF_logo_dark.png",
   darkLupa = "./assets/Combined_Shape.svg",

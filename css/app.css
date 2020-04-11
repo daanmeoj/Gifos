@@ -526,6 +526,59 @@ body {
   top: 9px;
 }
 
+.chequeoActive .contenidoChequeo .bodyChequeo .CopiarlEnlace,
+.chequeoActive .contenidoChequeo .bodyChequeo .DescargarGuifo {
+  background: #fff4fd;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  width: 256px;
+  height: 36px;
+  position: absolute;
+  right: 46px;
+  top: 87px;
+}
+
+.chequeoActive .contenidoChequeo .bodyChequeo .DescargarGuifo {
+  top: 137px;
+}
+
+.chequeoActive .contenidoChequeo .bodyChequeo .Listo {
+  background: #f7c9f3;
+  border: 1px solid #110038;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  width: 144px;
+  height: 36px;
+  position: absolute;
+  bottom: 44px;
+  right: 46px;
+}
+
+.chequeoActive .contenidoChequeo .bodyChequeo .textoGuifoSubido {
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  line-height: 22px;
+  position: absolute;
+  left: 419px;
+  margin: 0;
+  top: 49px;
+}
+
+.chequeoActive .contenidoChequeo .bodyChequeo .CopiarlEnlace h3,
+.chequeoActive .contenidoChequeo .bodyChequeo .DescargarGuifo h3,
+.chequeoActive .contenidoChequeo .bodyChequeo .Listo h3 {
+  margin: 0;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+}
+
 .chequeoActive .contenidoChequeo .bodyChequeo .subir {
   position: absolute;
   right: 16px;

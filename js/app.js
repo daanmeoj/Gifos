@@ -11,7 +11,6 @@ function EventListeners() {
   BotonCrear.addEventListener("click", OpenModalWindow);
 }
 /////////////////////funciones/////////////////////////////////////////////
-//./videoUpload.html
 function OpenModalWindow() {
   ui.ShowModalWindow();
   let botonComenzar = document.querySelector(".boton-2-modal");
@@ -38,8 +37,11 @@ function subirCaptura() {
   form.append("file", recorder.getBlob(), "myGif.gif");
   ui.ChangeStyleToSubiendoGuifo();
   gifs.postear(form).then(function (gif) {
-    console.log(gif.data.data.id);
     ui.ChangeStyleToGifoSubido();
+    urlNewGif = `https://api.giphy.com/v1/gifs/${gif.data.data.id}?api_key=fXk4hALQmQWZGRZNz6R0x4XuztKdKMvK`;
+    // console.log(urlNewGif);
+    // SendToClipboard(urlNewGif);
+    botonCopiarEnlace.addEventListener("click", SendToClipboard);
   });
 }
 
@@ -50,6 +52,17 @@ function RealizarBusqueda(e) {
     sugerenciasSection.style.display = "none";
     GetGifsByName(24, searchTerm.value);
   }
+}
+
+function SendToClipboard() {
+  navigator.clipboard
+    .writeText(urlNewGif)
+    .then(() => {
+      // Success!
+    })
+    .catch((err) => {
+      console.log("Something went wrong", err);
+    });
 }
 
 function getGifs(limit, typeOfRequest) {
