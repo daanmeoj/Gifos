@@ -24,6 +24,25 @@ var p,
   particularIndexLocal = 5,
   botonesSugerenciasQueAparecen;
 
+///////////////////////////////diccionario palabras//////////////////////////////////////////
+
+let palabrasMasBuscadasGoogle2019 =
+  "Palabras clave fotos hotel madrid barcelona gratis juegos videos contactos coches españa video alquiler google hoteles motos tv valencia venta casa chat español foro musica sevilla trabajo free ofertas peliculas piso vivienda web accesorios descarga diario messenger mujer mujeres paginas pc viajes casas chicas cine futbol granada imagenes juego malaga mp3 videos gratis zaragoza alicante amor blog callejero comprar deportes en alquiler internet pisos putas segunda mano trucos andalucia apartamentos baratos compra comunidad cursos empleo famosas libros noticias seguridad alquiler piso amateur bilbao chica compartir empresas galicia juegos gratis modelos paris playa programacion programas relaciones salud turismo adsl bajar compartir piso descargas desde foros foros horoscopo piso en alquiler tarragona television billetes bolsa catalunya compraventa diseño fiesta fiestas girona hombres ibiza inmobiliaria maduras motor real madrid seguros alquiler pisos anuncios elecciones flores jugar manga moviles resultados sms tu tv vacaciones viaje belleza color girls londres novia ofertas de viajes ofertas viajes piso madrid sabadell spain tarot alojamiento amigos anuncio apuestas ayuda baloncesto bcn bodas cataluña chistes conciertos culos euro firefox gente gobierno informatica inmobiliarias locales masajes prensa publicidad tias trabajar villa web de web messenger zapatillas amistad chicos juegos online lleida parejas piso en venta por que programacion tv regalos salud y belleza tdt tenis tuporno tv venta piso ventas viajar videos mujeres viviendas vuelo a coruña apartamento barato citas deporte dieta dinero famosos fincas guarras mantenimiento marketing pareja peso pisos en alquiler regalo servidores televisores xx adultos alquilar alquiler de pisos amateurs badalona calientes castilla y leon chalet chatear compartir piso madrid egipto el amor electricidad eventos gimnasio gordas hasta hipoteca humor juegos de chicas juegos para chicas novedades ocio ordenadores padel pagina web pillados plantillas prestamos promociones venta casas venta pisos ver videos what i ve done www con alquileres barça casero cita contacto cruceros dibujos para colorear dietas finca fotos chicas ";
+
+var sortAlphabets = function (text) {
+  return text.split(" ").sort().join(",");
+};
+
+const unique = (value, index, self) => {
+  return self.indexOf(value) === index;
+};
+
+const uniqueWords = sortAlphabets(palabrasMasBuscadasGoogle2019)
+  .split(",")
+  .filter(unique);
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
 class Timer {
   ResetCounters() {
     StopCronometro();
@@ -199,13 +218,38 @@ class UI {
     });
   }
 
-  displaySugerenciasQueAparecen(DebenAparacerElementos) {
+  Suggestionswords(SearchTerm) {
+    return uniqueWords.filter(function (word) {
+      return word.startsWith(SearchTerm);
+    });
+  }
+
+  displaySugerenciasQueAparecen(DebenAparacerElementos, inputBusqueda) {
     if (DebenAparacerElementos) {
-      contenedorSugerenciasQueAparecen.innerHTML = `
-      <div class="botonQueAparece boton1"><button><h3>Resultado de búsqueda sugerido</h3></button></div>
-      <div class="botonQueAparece boton2"><button><h3>Un resultado similar de búsqueda</h3></button></div>
-      <div class="botonQueAparece boton3"><button><h3>Y otro más</h3></button></div>
-            `;
+      if (this.Suggestionswords(inputBusqueda)[0] === undefined) {
+        contenedorSugerenciasQueAparecen.innerHTML = `<div class="botonQueAparece boton1"><button><h3>pascua</h3></button></div>`;
+      } else {
+        contenedorSugerenciasQueAparecen.innerHTML = `
+      <div class="botonQueAparece boton1"><button><h3>${
+        this.Suggestionswords(inputBusqueda)[0]
+      }</h3></button></div>`;
+      }
+      if (this.Suggestionswords(inputBusqueda)[1] === undefined) {
+        contenedorSugerenciasQueAparecen.innerHTML += `<div class="botonQueAparece boton1"><button><h3>colombia</h3></button></div>`;
+      } else {
+        contenedorSugerenciasQueAparecen.innerHTML += `
+      <div class="botonQueAparece boton1"><button><h3>${
+        this.Suggestionswords(inputBusqueda)[1]
+      }</h3></button></div>`;
+      }
+      if (this.Suggestionswords(inputBusqueda)[2] === undefined) {
+        contenedorSugerenciasQueAparecen.innerHTML += `<div class="botonQueAparece boton1"><button><h3>trump</h3></button></div>`;
+      } else {
+        contenedorSugerenciasQueAparecen.innerHTML += `
+      <div class="botonQueAparece boton1"><button><h3>${
+        this.Suggestionswords(inputBusqueda)[2]
+      }</h3></button></div>`;
+      }
     } else {
       contenedorSugerenciasQueAparecen.innerHTML = ``;
     }
@@ -456,7 +500,7 @@ class UI {
       BotonBusqueda.classList.add("enable");
       sugerenciasSection.style.height = "424px";
       emptySugerenciasBusqueda.style.flex = "37.7";
-      ui.displaySugerenciasQueAparecen(true);
+      ui.displaySugerenciasQueAparecen(true, inputBusqueda.value);
       contenedorSugerenciasQueAparecen.style.background = decimoOctavo;
       contenedorSugerenciasQueAparecen.style.padding = "16px 17px";
       sugerenciasHeading.style.display = "none";
@@ -511,7 +555,7 @@ class UI {
       }
     } else {
       BotonBusqueda.classList.remove("enable");
-      ui.displaySugerenciasQueAparecen(false);
+      ui.displaySugerenciasQueAparecen(false, "");
       contenedorSugerenciasQueAparecen.style.background = "";
       contenedorSugerenciasQueAparecen.style.boxShadow = "";
       sugerenciasSection.style.height = "428px";
