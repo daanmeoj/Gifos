@@ -18,7 +18,10 @@ var p,
   botonListo,
   botonesChequeo,
   textoGuifoSubido,
-  urlNewGif;
+  urlNewGif,
+  gifos,
+  counterGifosLocal = 0,
+  particularIndexLocal = 5;
 
 class Timer {
   ResetCounters() {
@@ -129,6 +132,25 @@ class UI {
         }
       }
     });
+  }
+
+  displayGifsFromLocal(gif) {
+    console.log(counterGifosLocal);
+    counterGifosLocal++;
+    const results = document.querySelector("#resultados-tendencias");
+
+    if (counterGifosLocal === particularIndexLocal) {
+      results.innerHTML += `
+                    <div class="card particularCard">
+                        <img src="${gif}" alt="">
+                    </div>`;
+      particularIndexLocal += 5;
+    } else {
+      results.innerHTML += `
+                    <div class="card">
+                       <img src="${gif}" alt="">
+                    </div>`;
+    }
   }
 
   displayBusqueda(gifs) {

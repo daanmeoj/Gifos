@@ -20,6 +20,13 @@ body {
   margin-left: 0.6%;
 }
 
+.Goback {
+  position: relative;
+  top: 87px;
+  left: 60px;
+  z-index: 1000;
+}
+
 .landing {
   position: relative;
   height: 121px;
@@ -849,7 +856,7 @@ body {
 }
 
 .sugerencias .empty-1 .botonQueAparece button {
-  width: 100%;
+  width: 91%;
   height: 34px;
   background: #f0f0f0;
   border: 1px solid #808080;

@@ -22,7 +22,13 @@ body {
   background-image: linear-gradient(270deg, $primero 0%, $segundo 100%);
   box-shadow: 0 1px 0 0 $tercero;
 }
-
+////////////////////////////go back///////////////////////////
+.Goback {
+  position: relative;
+  top: 87px;
+  left: 60px;
+  z-index: 1000;
+}
 ////////////////////////////landing///////////////////////////
 
 .landing {
@@ -762,11 +768,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    //padding: 16px 17px;
     position: relative;
     .botonQueAparece {
       button {
-        width: 100%;
+        width: 91%;
         height: 34px;
         background: $vigesimo-tercero;
         border: 1px solid $quinto;

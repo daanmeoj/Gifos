@@ -27,6 +27,17 @@ class GiphyAPI {
     };
   }
 
+  async getGifsFromLocal(gifo) {
+    const apiResponse = await fetch(gifo);
+
+    //returns a JSON response
+    const gifs = await apiResponse.json();
+
+    return {
+      gifs,
+    };
+  }
+
   async PeticionPost(url, params = null) {
     try {
       const fetchData = await fetch(url, params);
