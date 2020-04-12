@@ -21,7 +21,8 @@ var p,
   urlNewGif,
   gifos,
   counterGifosLocal = 0,
-  particularIndexLocal = 5;
+  particularIndexLocal = 5,
+  botonesSugerenciasQueAparecen;
 
 class Timer {
   ResetCounters() {
@@ -122,12 +123,18 @@ class UI {
           results.innerHTML += `
           <div class="card particularCard">
               <img src="${gif.images.original.url}" alt="">
+              <div class="cabeceraGif">${gif.title
+                .substring(0, gif.title.indexOf("GIF"))
+                .replace(/ /g, " #")}</div>
           </div>`;
           particularIndex += 5;
         } else {
           results.innerHTML += `
           <div class="card">
               <img src="${gif.images.original.url}" alt="">
+              <div class="cabeceraGif">${gif.title
+                .substring(0, gif.title.indexOf("GIF"))
+                .replace(/ /g, " #")}</div>
           </div>`;
         }
       }
@@ -153,9 +160,15 @@ class UI {
     }
   }
 
-  displayBusqueda(gifs) {
+  displayBusqueda(gifs, palabraBusqueda) {
     const results = document.querySelector("#resultados-tendencias");
+    let tendencias = document.querySelector(".tendencias");
+    let emptyTendencias = document.querySelector(".tendencias .empty-1");
+    tendencias.firstElementChild.nextElementSibling.firstElementChild.textContent = `${palabraBusqueda} (resultados)`;
+    tendencias.style.height = "1941px";
+    emptyTendencias.style.flex = "100";
     results.innerHTML = ``;
+    emptyTendencias.innerHTML = ``;
     let particularIndex = 8;
     gifs.forEach((gif, index) => {
       if (index > 3) {
@@ -171,6 +184,17 @@ class UI {
               <img src="${gif.images.original.url}" alt="">
           </div>`;
         }
+      } else if (index < 3) {
+        let contenedorboton1 = document.createElement("div");
+        contenedorboton1.classList.add(
+          "boton" + index + "SugerenciasDespuesBusqueda"
+        );
+        let boton1SugerenciasDespuesBusqueda = document.createElement("button");
+        boton1SugerenciasDespuesBusqueda.innerHTML = `# ${gif.title
+          .substring(0, gif.title.indexOf("GIF"))
+          .replace(/ /g, " ")}`;
+        contenedorboton1.appendChild(boton1SugerenciasDespuesBusqueda);
+        emptyTendencias.appendChild(contenedorboton1);
       }
     });
   }
@@ -185,6 +209,11 @@ class UI {
     } else {
       contenedorSugerenciasQueAparecen.innerHTML = ``;
     }
+  }
+
+  HideSections() {
+    BusquedaSection.style.display = "none";
+    sugerenciasSection.style.display = "none";
   }
 
   ChangeStyleToSubiendoGuifo() {
@@ -429,7 +458,6 @@ class UI {
       emptySugerenciasBusqueda.style.flex = "37.7";
       ui.displaySugerenciasQueAparecen(true);
       contenedorSugerenciasQueAparecen.style.background = decimoOctavo;
-      contenedorSugerenciasQueAparecen.style.boxShadow = `inset -2px -2px 0 0 ${sexto}, inset 2px 2px 0 0 ${septimo}`;
       contenedorSugerenciasQueAparecen.style.padding = "16px 17px";
       sugerenciasHeading.style.display = "none";
       SugerenciasEmpty2.style.display = "none";
@@ -441,12 +469,40 @@ class UI {
         let VerMasButton = (item.firstElementChild.style.display = "none");
       }
       if (botonDropdownPersonalizado.classList.contains("isDay")) {
+        contenedorSugerenciasQueAparecen.style.background = decimoOctavo;
+        contenedorSugerenciasQueAparecen.style.boxShadow = `inset -2px -2px 0 0 ${sexto}, inset 2px 2px 0 0 ${septimo}`;
+        botonesSugerenciasQueAparecen = document.querySelectorAll(
+          ".botonQueAparece button"
+        );
+        botonesSugerenciasQueAparecen[0].style.background = "";
+        botonesSugerenciasQueAparecen[1].style.background = "";
+        botonesSugerenciasQueAparecen[2].style.background = "";
+        botonesSugerenciasQueAparecen[0].style.border = "";
+        botonesSugerenciasQueAparecen[1].style.border = "";
+        botonesSugerenciasQueAparecen[2].style.border = "";
+        botonesSugerenciasQueAparecen[0].style.boxShadow = "";
+        botonesSugerenciasQueAparecen[1].style.border = "";
+        botonesSugerenciasQueAparecen[2].style.border = "";
         BotonBusqueda.firstElementChild.firstElementChild.src = activeLupa;
         BotonBusqueda.lastElementChild.firstElementChild.style.color = tercero;
         BotonBusqueda.style.background = primero;
         BotonBusqueda.style.border = `1px solid ${tercero}`;
         BotonBusqueda.style.boxShadow = `inset -1px -1px 0 0 ${cuarto}, inset 1px 1px 0 0 ${septimo}`;
       } else {
+        botonesSugerenciasQueAparecen = document.querySelectorAll(
+          ".botonQueAparece button"
+        );
+        botonesSugerenciasQueAparecen[0].style.background = vigesimoCuarto;
+        botonesSugerenciasQueAparecen[1].style.background = vigesimoCuarto;
+        botonesSugerenciasQueAparecen[2].style.background = vigesimoCuarto;
+        botonesSugerenciasQueAparecen[0].style.border = `1px solid ${quinto}`;
+        botonesSugerenciasQueAparecen[1].style.border = `1px solid ${quinto}`;
+        botonesSugerenciasQueAparecen[2].style.border = `1px solid ${quinto}`;
+        botonesSugerenciasQueAparecen[0].style.boxShadow = ` inset -1px -1px 0 0 ${sexto}, inset 1px 1px 0 0 ${septimo}`;
+        botonesSugerenciasQueAparecen[1].style.border = ` inset -1px -1px 0 0 ${sexto}, inset 1px 1px 0 0 ${septimo}`;
+        botonesSugerenciasQueAparecen[2].style.border = ` inset -1px -1px 0 0 ${sexto}, inset 1px 1px 0 0 ${septimo}`;
+        contenedorSugerenciasQueAparecen.style.background = sexto;
+        contenedorSugerenciasQueAparecen.style.boxShadow = `inset -2px -2px 0 0 ${decimoSexto}, inset 2px 2px 0 0 ${septimo}`;
         BotonBusqueda.firstElementChild.firstElementChild.src = activaDarkLupa;
         BotonBusqueda.lastElementChild.firstElementChild.style.color = septimo;
         BotonBusqueda.style.background = decimoTercero;

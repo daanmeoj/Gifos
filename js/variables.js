@@ -43,6 +43,7 @@ const BodyOfdocument = document.body,
   navegacion = document.querySelector(".navegacion"),
   landingLogo = document.querySelector(".landing .logo img"),
   BotonCrear = document.querySelector(".boton-tipo-1 button"),
+  BotonMisGuifos = document.querySelector(".enlace"),
   enlace = document.querySelector(".enlace a"),
   comboElegirTema1 = document.querySelector(".boton-tipo-4 button:first-child"),
   comboElegirTema2 = document.querySelector(".boton-tipo-4 button:last-child"),
@@ -72,8 +73,7 @@ const BodyOfdocument = document.body,
   contenedorModal = document.querySelector(".contenedorModal"),
   ChequeoAntesComenzar = document.querySelector(".ChequeoAntes"),
   tendenciasSection = document.querySelector(".tendencias"),
-  title = document.querySelector("title"),
-  now = new Date();
+  title = document.querySelector("title");
 
 var resultadosSugeridos,
   video,
@@ -85,4 +85,5 @@ var resultadosSugeridos,
   centisegundos,
   segundos,
   minutos,
-  horas;
+  horas,
+  DondeDioClic;

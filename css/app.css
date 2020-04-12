@@ -21,8 +21,8 @@ body {
 }
 
 .Goback {
-  position: relative;
-  top: 87px;
+  position: absolute;
+  top: 79px;
   left: 60px;
   z-index: 1000;
 }
@@ -969,6 +969,14 @@ body {
   justify-content: center;
 }
 
+.tendencias .card {
+  position: relative;
+}
+
+.tendencias .card:hover .cabeceraGif {
+  opacity: 1;
+}
+
 .tendencias .card img {
   width: 263px;
   height: 280px;
@@ -978,12 +986,45 @@ body {
   margin-bottom: 16px;
 }
 
+.tendencias .card .cabeceraGif {
+  position: absolute;
+  z-index: 1000;
+  bottom: 20px;
+  opacity: 0;
+  background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
+  width: 100%;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 2px;
+}
+
 .tendencias .particularCard img {
   width: 555px;
 }
 
 .tendencias .empty-1 {
   flex: 64;
+  display: flex;
+}
+
+.tendencias .empty-1 button {
+  padding: 8px 12px 8px 7px;
+  background: #4180f6;
+  border: 1px solid #4c2f99;
+  box-shadow: inset -2px -2px 0 0 #284f99, inset 2px 2px 0 0 #ffffff;
+  font-family: "Chakra Petch", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 18px;
+  margin-right: 8px;
+  margin-top: 12px;
 }
 
 .tendencias .heading {
