@@ -334,6 +334,7 @@ class UI {
       "none";
     contenidoChequeo.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.style.display =
       "block";
+    document.querySelector(".ChequeoAntes").style.height = "500px";
     tendenciasSection.style.display = "";
     botonCancelar.style.display = "none";
     botonCopiarEnlace = document.createElement("button");

@@ -68,12 +68,26 @@ body {
           box-shadow: inset -1px -1px 0 0 $cuarto, inset 1px 1px 0 0 $septimo;
           height: 36px;
           width: 144px;
+          &:hover {
+            outline: 1px dotted black;
+            outline-offset: -4px;
+          }
         }
       }
     }
     .dropdown {
       width: 167px;
       height: 36px;
+      &:hover {
+        .boton {
+          .boton-tipo-4 {
+            button {
+              outline: 1px dotted black;
+              outline-offset: -4px;
+            }
+          }
+        }
+      }
 
       .contenedor-ListaTemas {
         display: none;
@@ -152,9 +166,14 @@ body {
 
     .enlace {
       border: 0;
-      padding-top: 9px;
-      padding-bottom: 9px;
+      //padding-top: 9px;
+      //padding-bottom: 9px;
+      //border: 1px solid red;
+      //height: 32px;
       a {
+        display: inline-block;
+        height: 25px;
+        width: 95px;
         text-decoration: none;
         font-family: $fuente-principal;
         font-size: 16px;
@@ -162,8 +181,19 @@ body {
         letter-spacing: 0;
         line-height: 18px;
         font-weight: 400;
+        display: flex;
+        justify-content: center;
+        padding-top: 9px;
         span {
           text-decoration: underline;
+        }
+        &:hover {
+          border: 1px dotted black;
+          height: 23px;
+          width: 93px;
+        }
+        &:active {
+          color: grey;
         }
       }
     }
@@ -493,6 +523,10 @@ body {
         height: 36px;
         width: 144px;
         display: none;
+        &:hover {
+          outline: 1px dotted black;
+          outline-offset: -4px;
+        }
         h3 {
           margin: 0;
           font-family: $fuente-principal;
@@ -770,6 +804,10 @@ body {
           flex: 8;
         }
         .boton-submit {
+          &:active {
+            outline: 1px dotted black;
+            outline-offset: -4px;
+          }
           a {
             text-decoration: none;
           }
@@ -831,6 +869,10 @@ body {
           border: 1px dotted black;
         }
       }
+      button {
+        outline: 1px dotted black;
+        outline-offset: -3px;
+      }
     }
     img {
       width: 263px;
@@ -846,6 +888,10 @@ body {
     position: relative;
     .botonQueAparece {
       button {
+        &:hover {
+          outline: 1px dotted black;
+          outline-offset: -3px;
+        }
         width: 91%;
         height: 34px;
         background: $vigesimo-tercero;
@@ -941,7 +987,6 @@ body {
           letter-spacing: 0;
           text-align: center;
           line-height: 18px;
-          border: 1px dotted black;
         }
       }
     }

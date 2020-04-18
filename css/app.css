@@ -70,9 +70,19 @@ body {
   width: 144px;
 }
 
+.landing .combos .boton .boton-tipo-1 button:hover {
+  outline: 1px dotted black;
+  outline-offset: -4px;
+}
+
 .landing .combos .dropdown {
   width: 167px;
   height: 36px;
+}
+
+.landing .combos .dropdown:hover .boton .boton-tipo-4 button {
+  outline: 1px dotted black;
+  outline-offset: -4px;
 }
 
 .landing .combos .dropdown .contenedor-ListaTemas {
@@ -156,11 +166,12 @@ body {
 
 .landing .combos .enlace {
   border: 0;
-  padding-top: 9px;
-  padding-bottom: 9px;
 }
 
 .landing .combos .enlace a {
+  display: inline-block;
+  height: 25px;
+  width: 95px;
   text-decoration: none;
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
@@ -168,10 +179,23 @@ body {
   letter-spacing: 0;
   line-height: 18px;
   font-weight: 400;
+  display: flex;
+  justify-content: center;
+  padding-top: 9px;
 }
 
 .landing .combos .enlace a span {
   text-decoration: underline;
+}
+
+.landing .combos .enlace a:hover {
+  border: 1px dotted black;
+  height: 23px;
+  width: 93px;
+}
+
+.landing .combos .enlace a:active {
+  color: grey;
 }
 
 .landing .empty {
@@ -537,6 +561,11 @@ body {
   display: none;
 }
 
+.chequeoActive .contenidoChequeo .bodyChequeo .repetirCaptura:hover {
+  outline: 1px dotted black;
+  outline-offset: -4px;
+}
+
 .chequeoActive .contenidoChequeo .bodyChequeo .repetirCaptura h3 {
   margin: 0;
   font-family: "Chakra Petch", sans-serif;
@@ -867,6 +896,11 @@ body {
   top: 6px;
 }
 
+.busqueda .contenedor-busqueda .zona-busqueda form .boton-submit:active {
+  outline: 1px dotted black;
+  outline-offset: -4px;
+}
+
 .busqueda .contenedor-busqueda .zona-busqueda form .boton-submit a {
   text-decoration: none;
 }
@@ -922,6 +956,11 @@ body {
   border: 1px dotted black;
 }
 
+.sugerencias .card:hover button {
+  outline: 1px dotted black;
+  outline-offset: -3px;
+}
+
 .sugerencias .card img {
   width: 263px;
   height: 286px;
@@ -942,6 +981,11 @@ body {
   background: #f0f0f0;
   border: 1px solid #808080;
   box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+}
+
+.sugerencias .empty-1 .botonQueAparece button:hover {
+  outline: 1px dotted black;
+  outline-offset: -3px;
 }
 
 .sugerencias .empty-1 .botonQueAparece button h3 {
@@ -1039,7 +1083,6 @@ body {
   letter-spacing: 0;
   text-align: center;
   line-height: 18px;
-  border: 1px dotted black;
 }
 
 .tendencias {

@@ -138,6 +138,7 @@ if (localStorage.getItem("clickTrace") === "crear") {
   OpenModalWindow();
 } else {
   ui.HideSections();
+  document.querySelector("#MisGuifos").firstElementChild.style.color = "grey";
   document.querySelector(".tendencias .empty-1").style.flex = "0";
   document.querySelector(".tendencias .heading").firstElementChild.innerHTML =
     "Mis guifos";
