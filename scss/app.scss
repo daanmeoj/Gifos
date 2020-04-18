@@ -825,10 +825,17 @@ body {
     padding: 4px;
     height: 313px;
     width: 263px;
+    &:hover {
+      .gif {
+        img {
+          border: 1px dotted black;
+        }
+      }
+    }
     img {
       width: 263px;
       height: 286px;
-      padding-top: 2px;
+      margin-top: 2px;
     }
   }
   .empty-1 {
@@ -915,6 +922,7 @@ body {
     }
     .gif {
       position: relative;
+
       .boton {
         position: absolute;
         top: 237px;
@@ -933,6 +941,7 @@ body {
           letter-spacing: 0;
           text-align: center;
           line-height: 18px;
+          border: 1px dotted black;
         }
       }
     }
@@ -961,6 +970,10 @@ body {
       padding-top: 4px;
       padding-left: 4px;
       padding-right: 4px;
+
+      img {
+        border: 1px dotted black;
+      }
     }
     img {
       width: 263px;
@@ -970,12 +983,12 @@ body {
     .cabeceraGif {
       position: absolute;
       z-index: 1000;
-      right: 4px;
-      left: 4px;
-      bottom: 4px;
+      right: 5px;
+      left: 5px;
+      bottom: 5px;
       opacity: 0;
       background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-      width: 98%;
+      width: 96%;
       font-family: $fuente-principal;
       font-weight: 700;
       font-size: 14px;
@@ -991,7 +1004,7 @@ body {
     }
 
     .cabeceraGif {
-      width: 99%;
+      width: 98%;
     }
   }
 
