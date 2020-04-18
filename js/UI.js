@@ -25,7 +25,8 @@ var p,
   botonesSugerenciasQueAparecen,
   barraReproduccion,
   intervalProgressBarSubiendo,
-  counterProgressBar = 0;
+  counterProgressBar = 0,
+  closeIconCapturar;
 
 ///////////////////////////////diccionario palabras//////////////////////////////////////////
 
@@ -298,6 +299,7 @@ class UI {
   }
 
   ChangeStyleToSubiendoGuifo() {
+    document.querySelector(".closeIconCapturar").style.display = "block";
     document.querySelector(".imagenPrevia").style.display = "none";
     document.querySelector(".imagenSubiendo").style.display = "block";
     botonRepetirCaptura.style.display = "none";
@@ -320,6 +322,12 @@ class UI {
 
   ChangeStyleToGifoSubido() {
     clearInterval(intervalProgressBarSubiendo);
+    document.querySelector(".closeIconCapturar").style.left = "695px";
+
+    document.querySelector(".headingChequeo").firstElementChild.innerHTML =
+      "Guifo Subido Con Éxito";
+
+    //   "Guifo Subido Con Éxito";
     let contenidoChequeo = document.querySelector(".contenidoChequeo");
     contenidoChequeo.classList.add("Minimizar");
     contenidoChequeo.firstElementChild.nextElementSibling.firstElementChild.nextElementSibling.nextElementSibling.style.display =
@@ -381,6 +389,12 @@ class UI {
     imagenChequeo = document.createElement("video");
     botonesChequeo = document.createElement("div");
     botonCapturar = document.createElement("button");
+    closeIconCapturar = document.createElement("div");
+    closeIconCapturar.classList.add("closeIconCapturar");
+    let closeIconCapturarImagen = document.createElement("img");
+    closeIconCapturarImagen.src = closeIconImg;
+    closeIconCapturarImagen.alt = "close icon";
+    closeIconCapturar.appendChild(closeIconCapturarImagen);
     barraReproduccion = document.createElement("div");
     let botonPlay = document.createElement("div");
     let barraProgresoReproduccion = document.createElement("div");
@@ -451,6 +465,7 @@ class UI {
     TextoSubir.textContent = "Subir Guifo";
     TextoRepetirCaptura.textContent = "Repetir Captura";
     headingChequeo.appendChild(TextoHeadingChequeo);
+    headingChequeo.appendChild(closeIconCapturar);
     ImageCamera.src = camera;
     TextoCapturar.textContent = "Capturar";
     contenidoChequeo.classList.add("contenidoChequeo");
@@ -512,6 +527,7 @@ class UI {
       headingChequeo.firstElementChild.textContent = "Capturando Tu Guifo";
     } else {
       headingChequeo.firstElementChild.textContent = "Vista Previa";
+      document.querySelector(".closeIconCapturar").style.display = "none";
       botonCapturar.classList.remove("RecordingNow");
       timer.StopCronometro();
 
@@ -726,6 +742,15 @@ class UI {
           VerMasButton.style.boxShadow = `inset -2px -2px 0 0 ${decimoQuinto}, inset 2px 2px 0 0 ${septimo}`;
           item.firstElementChild.style.background = `linear-gradient(270deg, ${decimoTercero} 0%, ${decimoCuarto} 100%)`;
         }
+
+        resultadosTen = document.querySelectorAll(
+          ".resultados-tendencias .card"
+        );
+
+        for (let item of resultadosTen) {
+          item.lastElementChild.style.background =
+            "linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%)";
+        }
       }, 1000);
 
       /////////////////////////////cambiar estilo a elementos fijos del html///////////////////////////
@@ -781,6 +806,14 @@ class UI {
           VerMasButton.style.border = "";
           VerMasButton.style.boxShadow = "";
           item.firstElementChild.style.background = "";
+        }
+
+        resultadosTen = document.querySelectorAll(
+          ".resultados-tendencias .card"
+        );
+
+        for (let item of resultadosTen) {
+          item.lastElementChild.style.background = "";
         }
       }, 1000);
 

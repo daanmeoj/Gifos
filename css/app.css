@@ -354,6 +354,12 @@ body {
   top: 6.4px;
 }
 
+.chequeoActive .contenidoChequeo .headingChequeo .closeIconCapturar {
+  position: absolute;
+  top: 5px;
+  left: 831px;
+}
+
 .chequeoActive .contenidoChequeo .bodyChequeo {
   height: 524px;
   width: 860px;

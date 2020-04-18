@@ -37,7 +37,8 @@ let darkLogo = "./assets/gifOF_logo_dark.png",
   recording = "./assets/recording.svg",
   camera = "/assets/camera.svg",
   imagenPlanetaPng = "./assets/globe_img.png",
-  svgBotonPlay = "./assets/forward.svg";
+  svgBotonPlay = "./assets/forward.svg",
+  closeIconImg = "./assets/button3.svg";
 /////////////////////////////selectores/////////////////////////////////////////
 const BodyOfdocument = document.body,
   lupa = document.querySelector(".boton-tipo-2 button .lupa img"),
@@ -77,6 +78,7 @@ const BodyOfdocument = document.body,
   title = document.querySelector("title");
 
 var resultadosSugeridos,
+  resultadosTen,
   video,
   intervalID,
   counterCentisegundos,
