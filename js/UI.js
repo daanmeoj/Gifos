@@ -607,9 +607,25 @@ class UI {
       contenedorSugerenciasQueAparecen.style.padding = "16px 17px";
       sugerenciasHeading.style.display = "none";
       SugerenciasEmpty2.style.display = "none";
+
+      let imagenesAparecidas = document.querySelectorAll(
+        ".resultados-sugeridos .card .gif img"
+      );
+
+      //////////moviendo imagenes hacia arriba/////////
+      // document.querySelector("#sugerencias-empty-1").style.zIndex = "1000";
+
+      // for (let i = 0; i < 4; i++) {
+      //   imagenesAparecidas[i].style.position = "absolute";
+      //   imagenesAparecidas[i].style.bottom = "-265px";
+      // }
+
+      /////////////////////////////
+
       resultadosSugeridos = document.querySelectorAll(
         ".resultados-sugeridos .card"
       );
+
       for (let item of resultadosSugeridos) {
         item.style.height = "264px";
         let VerMasButton = (item.firstElementChild.style.display = "none");
@@ -668,6 +684,7 @@ class UI {
       resultadosSugeridos = document.querySelectorAll(
         ".resultados-sugeridos .card"
       );
+
       for (let item of resultadosSugeridos) {
         item.style.height = "313px";
         let VerMasButton = (item.firstElementChild.style.display = "");

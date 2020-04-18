@@ -243,6 +243,7 @@ body {
           line-height: 20px;
           span {
             font-weight: 700;
+            font-style: italic;
           }
         }
         ul {
@@ -936,7 +937,7 @@ body {
 ///////////////////////tendencias///////////////////////
 
 .tendencias {
-  height: 1905px;
+  height: 1900px;
   max-width: 83.3%;
   display: flex;
   margin: 0 auto;
@@ -944,26 +945,32 @@ body {
   justify-content: center;
   .card {
     position: relative;
+    margin-bottom: 10px;
+
     &:hover {
       .cabeceraGif {
         opacity: 1;
       }
+      background: #e6e6e6;
+      box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+      padding-top: 4px;
+      padding-left: 4px;
+      padding-right: 4px;
     }
     img {
       width: 263px;
-      height: 280px;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      margin-bottom: 16px;
+      height: 284px;
+      //margin: 0;
     }
     .cabeceraGif {
       position: absolute;
       z-index: 1000;
-      bottom: 20px;
+      right: 4px;
+      left: 4px;
+      bottom: 4px;
       opacity: 0;
       background-image: linear-gradient(270deg, #f7c9f3 0%, #4180f6 100%);
-      width: 100%;
+      width: 98%;
       font-family: $fuente-principal;
       font-weight: 700;
       font-size: 14px;
@@ -971,12 +978,15 @@ body {
       letter-spacing: 0;
       padding-top: 4px;
       padding-bottom: 4px;
-      padding-left: 2px;
     }
   }
   .particularCard {
     img {
-      width: 555px;
+      width: 549px;
+    }
+
+    .cabeceraGif {
+      width: 99%;
     }
   }
 
