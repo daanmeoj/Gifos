@@ -414,6 +414,68 @@ body {
           }
         }
       }
+
+      .barraReproduccion {
+        width: 266px;
+        height: 24px;
+        position: absolute;
+        z-index: 2000;
+        background: #e6e6e6;
+        left: 159px;
+        bottom: 24px;
+
+        .botonPlay {
+          width: 20px;
+          height: 20px;
+          background: #f7c9f3;
+          border: 1px solid #110038;
+          box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+          position: relative;
+          top: 1px;
+          .imagenBotonPlay {
+            position: absolute;
+            left: 8px;
+            top: 5px;
+          }
+        }
+        .barraProgresoReproduccion {
+          width: 240px;
+          height: 24px;
+          background: #b4b4b4;
+          box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000000;
+          position: absolute;
+          top: 0;
+          right: 0;
+          .contenedorDivsProgreso {
+            display: flex;
+            position: absolute;
+            left: 2px;
+            top: 2px;
+            .index0 {
+              background: #f7c9f3;
+            }
+            .index1 {
+              background: #f7c9f3;
+            }
+            .index2 {
+              background: #f7c9f3;
+            }
+            .index3 {
+              background: #f7c9f3;
+            }
+            .index4 {
+              background: #f7c9f3;
+            }
+          }
+          .progressDiv {
+            width: 12px;
+            height: 20px;
+            background: #999999;
+            margin-right: 2px;
+          }
+        }
+      }
+
       .repetirCaptura {
         position: absolute;
         right: 174px;
@@ -649,7 +711,7 @@ body {
 
   .contenedor-busqueda {
     height: 99px;
-    width: 83.3%;
+    width: 83.022%;
     background: $decimo-octavo;
     box-shadow: inset -2px -2px 0 0 $sexto, inset 2px 2px 0 0 $septimo;
     display: flex;

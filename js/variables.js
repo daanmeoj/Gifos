@@ -36,7 +36,8 @@ let darkLogo = "./assets/gifOF_logo_dark.png",
   lightLogo = "./assets/gifOF_logo.png",
   recording = "./assets/recording.svg",
   camera = "/assets/camera.svg",
-  imagenPlanetaPng = "./assets/globe_img.png";
+  imagenPlanetaPng = "./assets/globe_img.png",
+  svgBotonPlay = "./assets/forward.svg";
 /////////////////////////////selectores/////////////////////////////////////////
 const BodyOfdocument = document.body,
   lupa = document.querySelector(".boton-tipo-2 button .lupa img"),
