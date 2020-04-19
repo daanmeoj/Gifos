@@ -808,9 +808,13 @@ body {
             outline: 1px dotted black;
             outline-offset: -4px;
           }
-          a {
+
+          .boton-tipo-2 {
             text-decoration: none;
+            height: 36px;
+            width: 102px;
           }
+
           flex: 102;
           height: 36px;
           position: relative;
@@ -827,16 +831,15 @@ body {
               width: 16px;
               height: 16px;
             }
-            h3 {
-              font-family: $fuente-principal;
-              font-size: 16px;
-              font-weight: 400;
-              color: $sexto;
-              letter-spacing: 0;
-              line-height: 18px;
-              margin: 0;
-              padding: 0;
-            }
+
+            font-family: $fuente-principal;
+            font-size: 16px;
+            font-weight: 400;
+            color: $sexto;
+            letter-spacing: 0;
+            line-height: 18px;
+            margin: 0;
+            padding: 0;
           }
         }
 

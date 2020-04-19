@@ -9,8 +9,27 @@ document.querySelector(
 /////////////////////event listeners///////////////////////////////////////
 function EventListeners() {
   BotonCrear.addEventListener("click", OpenModalWindow);
+  botonDropdownPersonalizado.addEventListener("click", ui.ToggleList);
+  day.addEventListener("click", CambiarTema);
+  night.addEventListener("click", CambiarTema);
+  //document.querySelector("");
 }
 /////////////////////funciones/////////////////////////////////////////////
+
+function changeToNight(state) {
+  ui.displaySailorNight(state);
+}
+
+function CambiarTema(e) {
+  if (e.target.className === "day") {
+    changeToNight(false);
+    botonDropdownPersonalizado.classList.add("isDay");
+  } else {
+    changeToNight(true);
+    botonDropdownPersonalizado.classList.remove("isDay");
+  }
+}
+
 function OpenModalWindow() {
   ui.ShowModalWindow();
   let botonComenzar = document.querySelector(".boton-2-modal");

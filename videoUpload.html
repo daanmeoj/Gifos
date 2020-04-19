@@ -10,10 +10,7 @@
     />
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/app.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"
-      type="text/javascript"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
   </head>
   <body>
     <nav class="navegacion">
@@ -24,36 +21,42 @@
     </nav>
     <main>
       <section class="Goback">
-        <a href="./index.html"><img src="./assets/arrow.svg" alt=""></a>
+        <a href="./index.html"><img src="./assets/arrow.svg" alt="" /></a>
       </section>
       <section class="landing" id="landing">
-        <div class="logo">
+        <a href="./index.html" class="logo">
           <img src="./assets/gifOF_logo.png" alt="logo" />
-        </div>
+        </a>
         <div class="combos">
           <div class="boton combo-item">
-            <a href="#" class="boton-tipo-1"><button>Crear Guifos</button></a>
+            <div class="boton-tipo-1">
+              <button>Crear Guifos</button>
+            </div>
           </div>
           <div
             class="dropdown combo-item isDay"
             id="botonDropdownPersonalizado"
           >
             <div class="boton combo-item">
-              <a href="#" class="boton-tipo-4"
-                ><button>Elegir tema</button
-                ><button><img src="./assets/dropdown.svg" alt="" /></button
-              ></a>
+              <div class="boton-tipo-4">
+                <button>Elegir tema</button
+                ><button><img src="./assets/dropdown.svg" alt="" /></button>
+              </div>
               <div
                 class="contenedor-ListaTemas isNotActive"
                 id="dropdownListThemes"
               >
                 <ul>
-                  <button class="day" id="dayTheme">
-                    <span>S</span>ailor Day
-                  </button>
-                  <button class="night" id="nightTheme">
-                    <span>S</span>ailor Night
-                  </button>
+                  <li>
+                    <button class="day" id="dayTheme">
+                      <span>S</span>ailor Day
+                    </button>
+                  </li>
+                  <li>
+                    <button class="night" id="nightTheme">
+                      <span>S</span>ailor Night
+                    </button>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -62,17 +65,15 @@
             <a href="#" class="boton"><span>M</span>is Guifos</a>
           </div>
         </div>
-        <div class="empty "></div>
+        <div class="empty"></div>
       </section>
       <section class="ChequeoAntes">
-        <div class="ContenedorChequeoAntes">
-        </div>
+        <div class="ContenedorChequeoAntes"></div>
       </section>
       <section class="modalWindow" id="modalWindow">
         <div class="contenedorModal">
           <div class="headCrear"></div>
-          <div class="bodyCrear">
-          </div>
+          <div class="bodyCrear"></div>
         </div>
       </section>
       <section class="busqueda" id="busquedaSection">
@@ -95,20 +96,20 @@
               />
               <div class="empty-2"></div>
               <div class="boton-submit">
-                <a href="#" class="boton-tipo-2"
-                  ><button>
-                    <div class="lupa">
+                <div class="boton-tipo-2">
+                  <button>
+                    <span class="lupa">
                       <img
                         src="./assets/lupa_inactive.svg"
                         alt="lupa-inactiva"
                       />
-                    </div>
-                    <div class="etiqueta"><h3>Buscar</h3></div>
-                  </button></a
-                >
+                    </span>
+                    <span class="etiqueta">Buscar</span>
+                  </button>
+                </div>
               </div>
               <div class="empty-3"></div>
-            <!-- </form> -->
+            </form>
           </div>
         </div>
       </section>

@@ -35,6 +35,7 @@ function MostrarEstiloBusqueda() {
 }
 
 function SetearSeguimientoClickCrear() {
+  window.location.href = "./videoUpload.html";
   localStorage.setItem("clickTrace", "crear");
 }
 

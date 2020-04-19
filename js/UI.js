@@ -663,7 +663,7 @@ class UI {
         botonesSugerenciasQueAparecen[1].style.border = "";
         botonesSugerenciasQueAparecen[2].style.border = "";
         BotonBusqueda.firstElementChild.firstElementChild.src = activeLupa;
-        BotonBusqueda.lastElementChild.firstElementChild.style.color = tercero;
+        BotonBusqueda.lastElementChild.style.color = tercero;
         BotonBusqueda.style.background = primero;
         BotonBusqueda.style.border = `1px solid ${tercero}`;
         BotonBusqueda.style.boxShadow = `inset -1px -1px 0 0 ${cuarto}, inset 1px 1px 0 0 ${septimo}`;
@@ -683,7 +683,7 @@ class UI {
         contenedorSugerenciasQueAparecen.style.background = sexto;
         contenedorSugerenciasQueAparecen.style.boxShadow = `inset -2px -2px 0 0 ${decimoSexto}, inset 2px 2px 0 0 ${septimo}`;
         BotonBusqueda.firstElementChild.firstElementChild.src = activaDarkLupa;
-        BotonBusqueda.lastElementChild.firstElementChild.style.color = septimo;
+        BotonBusqueda.lastElementChild.style.color = septimo;
         BotonBusqueda.style.background = decimoTercero;
         BotonBusqueda.style.border = `1px solid ${tercero}`;
         BotonBusqueda.style.boxShadow = `inset -1px -1px 0 0 ${vigesimoTercero}, inset 1px 1px 0 0 ${septimo}`;
@@ -708,13 +708,13 @@ class UI {
       }
       if (botonDropdownPersonalizado.classList.contains("isDay")) {
         BotonBusqueda.firstElementChild.firstElementChild.src = inactiveLupa;
-        BotonBusqueda.lastElementChild.firstElementChild.style.color = sexto;
+        BotonBusqueda.lastElementChild.style.color = sexto;
         BotonBusqueda.style.background = decimoOctavo;
         BotonBusqueda.style.border = `1px solid ${quinto}`;
         BotonBusqueda.style.boxShadow = `inset -1px -1px 0 0 ${sexto}, inset 1px 1px 0 0 ${septimo}`;
       } else {
         BotonBusqueda.firstElementChild.firstElementChild.src = darkLupa;
-        BotonBusqueda.lastElementChild.firstElementChild.style.color = decimoSexto;
+        BotonBusqueda.lastElementChild.style.color = decimoSexto;
         BotonBusqueda.style.background = sexto;
         BotonBusqueda.style.border = `1px solid ${quinto}`;
         BotonBusqueda.style.boxShadow = `inset -1px -1px 0 0 ${sexto}, inset 1px 1px 0 0 ${septimo}`;
