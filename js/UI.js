@@ -21,7 +21,7 @@ var p,
   urlNewGif,
   gifos,
   counterGifosLocal = 0,
-  particularIndexLocal = 5,
+  particularIndexLocal = 1,
   botonesSugerenciasQueAparecen,
   barraReproduccion,
   intervalProgressBarSubiendo,
@@ -299,6 +299,14 @@ class UI {
   }
 
   ChangeStyleToSubiendoGuifo() {
+    setTimeout(function () {
+      document
+        .querySelector(".botonCancelar")
+        .addEventListener("click", function () {
+          location.reload();
+        });
+    }, 1000);
+
     document.querySelector(".closeIconCapturar").style.display = "block";
     document.querySelector(".imagenPrevia").style.display = "none";
     document.querySelector(".imagenSubiendo").style.display = "block";

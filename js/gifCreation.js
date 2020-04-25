@@ -12,7 +12,6 @@ function EventListeners() {
   botonDropdownPersonalizado.addEventListener("click", ui.ToggleList);
   day.addEventListener("click", CambiarTema);
   night.addEventListener("click", CambiarTema);
-  //document.querySelector("");
 }
 /////////////////////funciones/////////////////////////////////////////////
 
@@ -66,15 +65,22 @@ function subirCaptura() {
   gifs
     .postear(form)
     .then(function (gif) {
-      ui.ChangeStyleToGifoSubido();
       urlNewGif = `https://api.giphy.com/v1/gifs/${gif.data.data.id}?api_key=fXk4hALQmQWZGRZNz6R0x4XuztKdKMvK`;
+      SaveGuifoToLocalStorage();
+      document.querySelector("#resultados-tendencias").innerHTML = "";
+      getGifs("", "", false);
+      ui.ChangeStyleToGifoSubido();
       botonCopiarEnlace.addEventListener("click", SendToClipboard);
-      botonDescargarGuifo.addEventListener("click", SaveGuifoToLocalStorage);
+      botonDescargarGuifo.addEventListener("click", downloadGif);
       botonListo.addEventListener("click", () => location.reload());
     })
     .catch(function (error) {
       console.log("funcion subirCaptura fallo");
     });
+}
+
+function downloadGif() {
+  invokeSaveAsDialog(recorder.getBlob(), "gifDavid.gif");
 }
 
 function SaveGuifoToLocalStorage() {
@@ -93,11 +99,20 @@ function SaveGuifoToLocalStorage() {
 }
 
 function SendToClipboard() {
-  navigator.clipboard
-    .writeText(urlNewGif)
-    .then(() => {})
-    .catch((err) => {
-      console.log("Fallo SendToClipboard", err);
+  serverResponse = gifs.getGifsFromLocal(urlNewGif);
+  serverResponse
+    .then((gifo) => {
+      navigator.clipboard
+        .writeText(gifo.gifs.data.images.original.url)
+        .then(() => {})
+        .catch((err) => {
+          console.log("Fallo SendToClipboard", err);
+        });
+      //console.log(gifo.gifs.data.images.original.url);
+      //ui.displayGifsFromLocal(gifo.gifs.data.images.original.url);
+    })
+    .catch(function (error) {
+      console.log("funcion GetGifs fallo");
     });
 }
 
@@ -123,8 +138,9 @@ function getGifs(limit, typeOfRequest, isFromApi) {
     } else {
       gifos = JSON.parse(localStorageContent);
     }
+    console.log("gifos 0" + gifos.length);
+
     gifos.forEach((gifo) => {
-      //console.log(gifo);
       serverResponse = gifs.getGifsFromLocal(gifo);
       serverResponse
         .then((gifo) => {

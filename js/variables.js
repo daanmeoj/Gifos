@@ -89,4 +89,5 @@ var resultadosSugeridos,
   segundos,
   minutos,
   horas,
-  DondeDioClic;
+  DondeDioClic,
+  urlEnhanced;
